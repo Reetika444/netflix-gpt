@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { checkValidData } from "../utils/validate";
-import { useNavigate } from "react-router-dom";
 import { addUser } from "../utils/userSlice";
 import {
   createUserWithEmailAndPassword,
@@ -10,9 +9,9 @@ import {
 import Header from "./Header";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
+import { USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -45,7 +44,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/72253708?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               // Profile updated!
@@ -59,8 +58,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              console.log("user", user);
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -71,9 +68,7 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log("errorMessage", errorMessage);
           setErrorMessage(errorCode + "-" + errorMessage);
-          navigate("/");
         });
     } else {
       // sign in logic
@@ -85,15 +80,11 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log("user", user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
-          console.log("errorMessage", errorMessage);
-          navigate("/");
         });
     }
   };
