@@ -13,3 +13,5 @@ export const API_OPTIONS = {
     // will change api_token later when tmdb site starts working
   },
 };
+
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
