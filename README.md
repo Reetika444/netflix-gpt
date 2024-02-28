@@ -46,6 +46,15 @@
 - (BONUS) Multi-language Feature in our App
   <!-- API KEY -->
   <!-- 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 -->
+- Get GPTSearch Open AI API Key
+- Gpt Search API Call
+- fetch gpt movie suggestions from TMDB
+- Created gptSlice added data
+- Reused Movie List Component to make movie suggestions container
+- Memoization
+- Added .env file
+- Adding .env file to gitignore
+- Made our site responsive
 
 # Features
 
