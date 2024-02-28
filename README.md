@@ -44,6 +44,8 @@
 - GPT Search page
 - GPT Search Bar
 - (BONUS) Multi-language Feature in our App
+  <!-- API KEY -->
+  <!-- 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 -->
 
 # Features
 

@@ -8,8 +8,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZDg3OWY1YzdkNzg1MDlkZTM4MjJjZGYxY2UyMDFkZiIsInN1YiI6IjY1ZDZmZjE0OWFmMTcxMDE3YjU4ZjNjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rxBq5VBOLQdvRh2X1c6PS47LtHcw2jJ6usJyE4Bczxk",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
     // will change api_token later when tmdb site starts working
   },
 };
@@ -24,3 +23,5 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hindi", name: "Hindi" },
   { identifier: "spanish", name: "Spanish" },
 ];
+
+export const OPENAI_KEY = "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";
